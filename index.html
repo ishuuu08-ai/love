@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Baby ❤️</title>
+
+<style>
+body {
+margin: 0;
+font-family: Arial;
+text-align: center;
+}
+
+/* SLIDES */
+.slide {
+display: none;
+min-height: 100vh;
+padding: 30px 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+overflow-y: auto;
+}
+
+/* TEXT */
+h2 { font-size: 26px; }
+
+p {
+font-size: 18px;
+line-height: 1.7;
+max-width: 90%;
+white-space: pre-line;
+}
+
+/* BUTTON */
+button {
+padding: 12px 20px;
+margin-top: 20px;
+border-radius: 20px;
+border: none;
+font-size: 16px;
+}
+
+/* IMAGE */
+img {
+width: 200px;
+border-radius: 20px;
+margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<audio id="song">
+<source src="tujaane.mp3">
+</audio>
+
+<!-- SLIDE 1 -->
+<div class="slide" id="s0" style="display:flex;">
+<h2>Good morning baby ❤️</h2>
+<p>
+Aaj ka message thoda special hai…
+sirf tere liye 💌
+</p>
+<button onclick="play(); go(1)">😔 Sorry ❤️</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide" id="s1">
+<p>
+Mjhe pta hai tu hurt hai 💔
+ki mai tujhe emotional support nhi de paayi
+
+But you know…
+I feel so bad ki mene dubara voi kia 😞
+</p>
+<button onclick="go(2)">🥺 Apologising</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide" id="s2">
+<p>
+Sabse zyada bura is baat ka laga
+ki tujhe aisa feel hua…
+
+Baby mai teri care karti hu ❤️
+aur tujhse bhot pyaar karti hu
+
+Tu itna cute hai 😭
+Tu itna handsome hai 😍
+
+Teri personality pe toh mai flat hogyi
+Tu mera crush bngya
+
+Merko bas ye chahiye tha
+tu meri life mei aa jaye 🥺💞
+</p>
+<button onclick="go(3)">🙏 Maaf krdo</button>
+</div>
+
+<!-- SLIDE 4 -->
+<div class="slide" id="s3">
+<p>
+Shayad mai sahi tareeke se dikha nahi paayi
+ki how much i care for you
+
+Par iska matlab yeh nahi
+ki mai selfish hu ya mujhe farak nahi padta
+
+Jab tu sad hota hai 😔
+mujhe bhi bhot bura lagta hai
+
+Mai bhi sad ho jati hu
+mujhe teri tension hoti hai 🥺
+</p>
+<button onclick="go(4)">😔 Sorry</button>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide" id="s4">
+<p>
+Tu bhot acha hai ❤️
+
+Tu mujhe itna pyaar karta hai
+meri sunta hai
+mujhe samajhta hai 🥺
+
+Mujhe lagta hai maine kuch ache karam kiye honge
+jo tu meri life mei aaya
+
+I am very blessed to have you 💗
+</p>
+<button onclick="go(5)">Next</button>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide" id="s5">
+<p>
+Jese tu mere muh pe burp karta hai 😂
+mere aage nachta hai
+
+Apni funny harkate karta hai 🤪
+
+Mujhe sab pasand hai ❤️
+
+I accept you as you are
+and I love the way you are
+
+Tu mera comfort hai
+mera favourite insaan 🫂
+</p>
+<button onclick="go(6)">Love</button>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide" id="s6">
+<p>
+Mai tere liye better insaan banna chahti hu
+
+Teri best girlfriend banna chahti hu 💗
+
+Mai tere saath sari zindagi rehna chahti hu
+
+Tere gharwalo ko apna banana chahti hu ❤️
+
+Teri mummy papa ko mummy papa bolna chahti hu
+
+Aur jo baby aayega
+uski chachi banna chahti hu 👶💞
+</p>
+<button onclick="go(7)">Chachii</button>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide" id="s7">
+<p>
+I want to enjoy everything with you
+
+My whole life ❤️
+
+Tu mera boyfriend nahi
+tu meri life hai
+
+I revolve around you 💞
+
+I am really sorry 😔
+
+But now change is coming ✨
+</p>
+<button onclick="go(8)">New</button>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide" id="s8">
+<p>
+Error 404 ⚠️
+Ignoring your feelings
+
+System updating…
+
+Girlfriend 2.0 installing 💗
+</p>
+<button onclick="go(9)">FIXING</button>
+</div>
+
+<!-- SLIDE 10 -->
+<div class="slide" id="s9">
+<h2>Who loves Bhavay the most? ❤️</h2>
+<p>Hint: 🐘</p>
+<input id="ans">
+<button onclick="check()">Submit</button>
+</div>
+
+<!-- FINAL -->
+<div class="slide" id="s10">
+<h2 style="color:red;">Yes you are right ❤️</h2>
+
+<p style="color:magenta;">
+Now you got your girlfriend 2.0 / hathi 2.0 💖
+
+I love you baby 🌹
+I miss you ❤️
+I am always there for you 🫶🏻
+I m sorry for everything ⭐️
+</p>
+
+<button onclick="rain()">Accepted? 🧿</button>
+
+<img src="photo.jpg">
+</div>
+
+<script>
+function go(n){
+let slides=document.getElementsByClassName("slide");
+for(let i=0;i<slides.length;i++){
+slides[i].style.display="none";
+}
+document.getElementById("s"+n).style.display="flex";
+}
+
+function play(){
+document.getElementById("song").play();
+}
+
+function check(){
+let v=document.getElementById("ans").value.toLowerCase();
+if(v==="hathi"){
+go(10);
+}
+}
+
+function rain(){
+let emojis=["🌹","💋","❤️","🥰","💐","🫶🏻","🥺","🌸","✨","💖"];
+
+let interval=setInterval(()=>{
+let e=document.createElement("div");
+e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+
+e.style.position="fixed";
+e.style.top="-30px";
+e.style.left=Math.random()*100+"vw";
+e.style.fontSize=(20+Math.random()*15)+"px";
+e.style.pointerEvents="none";
+
+e.animate([
+{transform:"translateY(0px)"},
+{transform:"translateY(110vh)"}
+],{
+duration:3000+Math.random()*2000,
+easing:"linear"
+});
+
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),5000);
+
+},80);
+
+setTimeout(()=>clearInterval(interval),30000);
+}
+</script>
+
+</body>
+</html>
