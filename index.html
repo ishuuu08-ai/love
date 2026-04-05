@@ -6,52 +6,53 @@
 
 <style>
 body {
-margin: 0;
-font-family: Arial;
-text-align: center;
+  margin: 0;
+  font-family: Arial;
+  text-align: center;
 }
 
 /* SLIDES */
 .slide {
-display: none;
-min-height: 100vh;
-padding: 30px 20px; 
-  
-text-align: center;
-  
-background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
-overflow-y: auto;
+  display: none;
+  min-height: 100vh;
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-align: center;
+  background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+  overflow-y: auto;
 }
 
 /* TEXT */
 h2 { font-size: 26px; }
 
 p {
-font-size: 18px;
-line-height: 1.8;
-max-width: 90%;
-margin: 20px auto;
-white-space: pre-line;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 90%;
+  margin: 20px auto;
+  white-space: pre-line;
 }
 
 /* BUTTON */
 button {
-padding: 12px 20px;
-margin-top: 20px;
-  
-border-radius: 20px;
-border: none;
-font-size: 16px;
-
-width: fit-content;
-max-width: 90%;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  width: fit-content;
 }
-  
+
 /* IMAGE */
 img {
-width: 200px;
-border-radius: 20px;
-margin-top: 20px;
+  width: 200px;
+  border-radius: 20px;
+  margin-top: 20px;
 }
 </style>
 
@@ -64,7 +65,7 @@ margin-top: 20px;
 </audio>
 
 <!-- SLIDE 1 -->
-<div class="slide" id="s0" style="display:flex;">
+<div class="slide" id="s0">
 <h2>Good morning baby ❤️</h2>
 <p>
 Aaj ka message thoda special hai…
@@ -83,7 +84,6 @@ But you know…
 I feel so bad ki mene dubara voi kia 😭
 but mere intention bilkul bhi nhi the😞
 i really do care for youuu🥺
-  
 </p>
 <button onclick="go(2)">🥺 Apologising</button>
 </div>
@@ -95,18 +95,22 @@ Sabse zyada bura is baat ka laga
 ki tujhe aisa feel hua…
 meri vjh se
 but i really want to apologise
+
 Baby mai teri care karti hu ❤️
 aur tujhse bhot pyaar karti hu
 tu meri jaan hai🥰
+
 Tu itna cute hai 😭
 Tu itna handsome hai 😍
 teri skin bhi itni glowing hogyi h cute sii
 itna pyara lgta hai sch mei🧿
+
 Teri personality pe toh mai flat hogyi
 Tu mera crush bngya
 
 Merko bas ye chahiye tha
 tu meri life mei aa jaye 🥺💞
+
 or agya toh ab mai apka pura dhyan rkhigi bby❤️
 </p>
 <button onclick="go(3)">🙏 Maaf krdo</button>
@@ -126,6 +130,7 @@ mujhe bhi bhot bura lagta hai
 
 Mai bhi sad ho jati hu
 mujhe teri tension hoti hai 🥺
+
 but i know ki mene glti ki hai
 but i will really sudharo it😞
 </p>
@@ -195,7 +200,7 @@ uski chachi banna chahti hu 👶💞
 <div class="slide" id="s7">
 <p>
 I want to enjoy everything with you❤️
-  mi want to experience my first trip with you❤️
+mi want to experience my first trip with you❤️
 my first trip night with you❤️
 my first adventure with you🥹
 and everything first with youu only💐
@@ -255,52 +260,55 @@ I m sorry for everything ⭐️
 
 <script>
 function go(n){
-let slides=document.getElementsByClassName("slide");
-for(let i=0;i<slides.length;i++){
-slides[i].style.display="none";
-}
-document.getElementById("s"+n).style.display="block";
+  let slides=document.getElementsByClassName("slide");
+  for(let i=0;i<slides.length;i++){
+    slides[i].style.display="none";
+  }
+  document.getElementById("s"+n).style.display="flex";
 }
 
 function play(){
-document.getElementById("song").play();
+  document.getElementById("song").play();
 }
 
 function check(){
-let v=document.getElementById("ans").value.toLowerCase();
-if(v==="hathi"){
-go(10);
-}
+  let v=document.getElementById("ans").value.toLowerCase();
+  if(v==="hathi"){
+    go(10);
+  }
 }
 
 function rain(){
-let emojis=["🌹","💋","❤️","🥰","💐","🫶🏻","🥺","🌸","✨","💖"];
+  let emojis=["🌹","💋","❤️","🥰","💐","🫶🏻","🥺","🌸","✨","💖"];
 
-let interval=setInterval(()=>{
-let e=document.createElement("div");
-e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+  let interval=setInterval(()=>{
+    let e=document.createElement("div");
+    e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
 
-e.style.position="fixed";
-e.style.top="-30px";
-e.style.left=Math.random()*100+"vw";
-e.style.fontSize=(20+Math.random()*15)+"px";
-e.style.pointerEvents="none";
+    e.style.position="fixed";
+    e.style.top="-30px";
+    e.style.left=Math.random()*100+"vw";
+    e.style.fontSize=(20+Math.random()*15)+"px";
+    e.style.pointerEvents="none";
 
-e.animate([
-{transform:"translateY(0px)"},
-{transform:"translateY(110vh)"}
-],{
-duration:3000+Math.random()*2000,
-easing:"linear"
-});
+    e.animate([
+      {transform:"translateY(0px)"},
+      {transform:"translateY(110vh)"}
+    ],{
+      duration:3000+Math.random()*2000,
+      easing:"linear"
+    });
 
-document.body.appendChild(e);
-setTimeout(()=>e.remove(),5000);
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),5000);
 
-},80);
+  },80);
 
-setTimeout(()=>clearInterval(interval),30000);
+  setTimeout(()=>clearInterval(interval),30000);
 }
+
+// show first slide
+window.onload = () => go(0);
 </script>
 
 </body>
